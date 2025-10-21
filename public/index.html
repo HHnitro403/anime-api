@@ -81,6 +81,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        gap: 20px;
         z-index: 2;
       }
       .github {
@@ -95,6 +96,26 @@
       a {
         font-size: 1.3rem;
         color: #7cdcfe;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      .gui-link {
+        padding: 12px 30px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border: none;
+        border-radius: 25px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: transform 0.2s;
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+      }
+      .gui-link:hover {
+        transform: scale(1.05);
+        text-decoration: none;
       }
       @media (max-width: 700px) {
         .image-container {
@@ -114,6 +135,7 @@
             >Click here to refer docs</a
           >
         </div>
+        <a href="/gui/index.html" class="gui-link">Explore API GUI</a>
       </div>
       <div class="image-container">
         <img
