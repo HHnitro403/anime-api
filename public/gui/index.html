@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime API Explorer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Anime API Explorer</h1>
+            <p class="subtitle">Browse and search anime using the API</p>
+        </header>
+
+        <nav class="tabs">
+            <button class="tab-btn active" data-tab="home">Home</button>
+            <button class="tab-btn" data-tab="search">Search</button>
+            <button class="tab-btn" data-tab="top-ten">Top 10</button>
+            <button class="tab-btn" data-tab="random">Random</button>
+        </nav>
+
+        <main>
+            <!-- Home Tab -->
+            <section id="home-tab" class="tab-content active">
+                <h2>Trending Anime</h2>
+                <div id="home-loading" class="loading">Loading...</div>
+                <div id="home-content" class="anime-grid"></div>
+            </section>
+
+            <!-- Search Tab -->
+            <section id="search-tab" class="tab-content">
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="Search for anime...">
+                    <button id="search-btn">Search</button>
+                </div>
+                <div id="search-suggestions" class="suggestions"></div>
+                <div id="search-loading" class="loading" style="display: none;">Loading...</div>
+                <div id="search-results" class="anime-grid"></div>
+            </section>
+
+            <!-- Top 10 Tab -->
+            <section id="top-ten-tab" class="tab-content">
+                <h2>Top 10 Anime</h2>
+                <div class="top-ten-filters">
+                    <label>
+                        <input type="radio" name="top-period" value="today" checked> Today
+                    </label>
+                    <label>
+                        <input type="radio" name="top-period" value="week"> Week
+                    </label>
+                    <label>
+                        <input type="radio" name="top-period" value="month"> Month
+                    </label>
+                </div>
+                <div id="top-ten-loading" class="loading">Loading...</div>
+                <div id="top-ten-content" class="anime-list"></div>
+            </section>
+
+            <!-- Random Tab -->
+            <section id="random-tab" class="tab-content">
+                <div class="random-section">
+                    <button id="random-btn" class="big-btn">Get Random Anime</button>
+                    <div id="random-loading" class="loading" style="display: none;">Loading...</div>
+                    <div id="random-content" class="anime-detail"></div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Modal for Anime Details -->
+        <div id="anime-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div id="modal-body"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
